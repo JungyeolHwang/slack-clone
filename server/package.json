@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Slack Clone Backend API",
+  "main": "dist/app.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node ./src/server.ts",
+    "setup": "DATABASE_URL='postgresql://postgres:password@localhost:5435/slack_clone_shard1' npx prisma db push && DATABASE_URL='postgresql://postgres:password@localhost:5433/slack_clone_shard2' npx prisma db push && DATABASE_URL='postgresql://postgres:password@localhost:5434/slack_clone_shard3' npx prisma db push"
+  },
+  "keywords": ["slack", "clone", "chat", "realtime"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.11.1",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.1",
+    "prisma": "^6.11.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.0.13",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
